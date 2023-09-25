@@ -1,0 +1,122 @@
+body {
+    background-color: #fafaff;
+    margin-left: none;
+    margin-right: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 6vw;
+}
+
+#time {
+    padding-left: 25vw;
+    padding-right: 25vw;
+}
+
+#clock {
+    text-align: center;
+    font-size: 5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;border-radius: 5px;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, #ff6961, #dfdfff);
+}
+
+#newTableForm {
+    text-align: center;
+    font-size: 5vw;
+    border-bottom: 5px solid #0f0f0f;
+    padding-bottom: 1vh;
+    margin-left: none;
+    margin-right: none;
+}
+
+#tableNumber {
+    font-size: 3vw;
+    width: 12vw;
+    margin: 1vw;
+}
+
+#openTime {
+    font-size: 3vw;
+    width: 20vw;
+    margin: 1vw;
+}
+
+#submitTable {
+    font-size: 3vw;
+}
+
+#breakDue {
+    margin-left: none;
+}
+
+#breakDue #times li {
+    list-style-type: none;
+    background-color: #efefef;
+    margin-left: none;
+}
+
+#breakDue #times li p {
+    text-align: center;
+    font-size: 3vw;
+    margin: 50px;
+    padding: 30px;
+    margin-right: 65vw;
+    background-color: #e0bbe4;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.table {
+    
+    font-size: 4vw;
+    background-image: linear-gradient(to bottom right, #d0d0d0, #e0e0e0);
+    margin: 0px 0px 20px 0vw;
+    padding: 15px;
+}
+
+.table .tableDivContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.table .tableDivContainer .tableNumber {
+    border-top: #999;
+    border-bottom: #999;
+    padding: 15px;
+    margin: 8px;
+    background-color: #b9e3aa;
+    border-radius: 5px;
+}
+
+.table .tableDivContainer button {
+    font-size: 4vw;
+    margin-left: 3vw;
+    padding: 1vw;
+    float: right;
+}
+
+.table .tableDivContainer .tableBreak {
+    width: 17vw;
+    background-color: #f5f2b5;
+}
+
+.table .tableDivContainer .playerButton {
+    background-color: #cad8eb;
+}
+
+.table .tableDivContainer .marker {
+    width: 3vh;
+    height: 3vh;
+    margin-top: 1vw;
+}
+
+.table .playerDiv input {
+    font-size: 3vw;
+    width: 20vw;
+}
