@@ -160,24 +160,31 @@
 		
 				// Initialize the calendar
 				let currentDate = new Date();
+				const nowDate = new Date()
 				let selectedStartDate = null;
+				let selectedEndDate = null;
 		
 				// Function to render the calendar
 				function renderCalendar() {
 					const year = currentDate.getFullYear();
 					const month = currentDate.getMonth();
+					const Year = nowDate.getFullYear();
+
 		
 					monthSelector.innerHTML = '';
 					yearSelector.innerHTML = '';
 		
 					for (let i = 0; i < 12; i++) {
+						if (i < nowDate.getMonth() && year === Year){
+							i += nowDate.getMonth();
+						}
 						const option = document.createElement('option');
 						option.value = i;
 						option.textContent = months[i];
 						monthSelector.appendChild(option);
 					}
 		
-					for (let i = year - 10; i <= year + 10; i++) {
+					for (let i = Year; i <= year + 10; i++) {
 						const option = document.createElement('option');
 						option.value = i;
 						option.textContent = i;
@@ -195,21 +202,51 @@
 					const startingDay = firstDay.getDay();
 					let date = 1;
 					let prevDate = daysInPrevMonth - startingDay + 1;
+					let nextDate = 1;
 		
 					let html = '';
+
+					const unselectables = 'class="unselectable" style="color:grey"';
 		
 					for (let i = 0; i < 6; i++) {
 						html += '<tr>';
 		
 						for (let j = 0; j < 7; j++) {
 							if (i === 0 && j < startingDay) {
-								html += `<td class="unselectable">${prevDate}</td>`;
+								html += `<td ${unselectables}>${prevDate}</td>`;
 								prevDate++;
 							} else if (date <= daysInMonth) {
-								html += `<td data-date="${date}">${date}</td>`;
-								date++;
+								if (month === nowDate.getMonth() && date < nowDate.getDate()){
+									html += `<td ${unselectables}>${date}</td>`;
+									date++;
+								}
+								else if (selectedStartDate !== null && selectedStartDate.getFullYear() === year && selectedStartDate.getMonth() === month && selectedStartDate.getDate() == date){
+									html += `<td data-date="${date}" style="background-color:#18453B85; cursor:pointer; color:black">${date}</td>`;
+									date++;
+								}
+								else if (selectedEndDate !== null && selectedEndDate.getFullYear() === year && selectedEndDate.getMonth() === month && selectedEndDate.getDate() == date){
+									html += `<td data-date="${date}" style="background-color:#18453B85; cursor:pointer; color:black">${date}</td>`;
+									date++;
+								}
+								else if (selectedStartDate !== null &&
+								selectedEndDate !== null &&
+								selectedStartDate.getFullYear() <= year &&
+								selectedEndDate.getFullYear() >= year &&
+								selectedStartDate.getMonth() <= month &&
+								selectedEndDate.getMonth() >= month &&
+								selectedStartDate.getDate() <= date &&
+								selectedEndDate.getDate() >= date){
+									html += `<td data-date="${date}" style="color:black; cursor:pointer; background-color:#18453B85;">${date}</td>`;
+									date++;
+								}
+								else {
+									html += `<td data-date="${date}" style="color:black; cursor:pointer;">${date}</td>`;
+									date++;
+								}
+								
 							} else {
-								html += `<td class="unselectable">${date - daysInMonth - 1}</td>`;
+								html += `<td ${unselectables}>${nextDate}</td>`;
+								nextDate++;
 							}
 						}
 		
@@ -221,6 +258,9 @@
 		
 				// Handle previous and next month buttons
 				prevMonthButton.addEventListener('click', () => {
+					if (currentDate.getMonth() === nowDate.getMonth() && currentDate.getFullYear() === nowDate.getFullYear()){
+						return;
+					}
 					currentDate.setMonth(currentDate.getMonth() - 1);
 					renderCalendar();
 				});
@@ -247,11 +287,18 @@
 						const selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), parseInt(event.target.getAttribute('data-date')));
 						if (!selectedStartDate) {
 							selectedStartDate = selectedDate;
-						} else {
+						}
+						else if (selectedStartDate.getTime() === selectedDate.getTime()){
+							selectedStartDate = null;
+						}
+						else if (selectedEndDate !== null && selectedEndDate.getTime() === selectedDate.getTime()){
+							selectedEndDate = null;
+						}
+						else {
 							const startDate = selectedStartDate < selectedDate ? selectedStartDate : selectedDate;
 							const endDate = selectedStartDate < selectedDate ? selectedDate : selectedStartDate;
-							console.log(`Selected Range: ${startDate.toDateString()} - ${endDate.toDateString()}`);
-							selectedStartDate = null;
+							selectedEndDate = endDate
+							selectedStartDate = startDate;
 						}
 						renderCalendar();
 					}
