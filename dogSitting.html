@@ -1,17 +1,74 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
-		<title>Mardan Dog Sitting</title>
+		<title>South Gippsland Dog Sitting</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.switch {
+			  	position: relative;
+				display: inline-block;
+				width: 45px;
+				height: 24px;
+				}
+
+				.switch input { 
+				opacity: 0;
+				width: 0;
+				height: 0;
+				}
+
+				.slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #ccc;
+				-webkit-transition: .4s;
+				transition: .4s;
+				}
+
+				.slider:before {
+				position: absolute;
+				content: "";
+				height: 19px;
+				width: 19px;
+				left: 4px;
+				bottom: 4px;
+				background-color: white;
+				-webkit-transition: .4s;
+				transition: .4s;
+				}
+
+				input:checked + .slider {
+				background-color: #4eb980;
+				}
+
+				input:checked + .slider:before {
+				-webkit-transform: translateX(19px);
+				-ms-transform: translateX(19px);
+				transform: translateX(19px);
+				}
+
+				/* Rounded sliders */
+				.slider.round {
+				border-radius: 34px;
+				}
+
+				.slider.round:before {
+				border-radius: 50%;
+				}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<div id="header">
 				<!--span class="logo icon fa-paper-plane"></span-->
-				<h1>Mardan DOG Sitting</h1>
+				<h1>South Gippsland  DOG Sitting</h1>
 				<p>Give your pooch a holiday while you are away!
 				<br />
 				<a href="#"> -Dog Sitting- </a><a href="#"></a><a href="#"> -Animals For Sale- </a><a href="#"> -Fresh Produce- </a></p>
@@ -89,9 +146,156 @@
 						</thead>
 						<tbody id="calendarBody"></tbody>
 					</table>
-				</div>
-                
+					<div class="row">
+						<div class="col-6 col-12-mobilep">
+							<label for="dropOff">From</label>
+							<input class="text" type="text" name="dropOff" id="dropOff" disabled value="" placeholder="" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label for="pickUp">Until</label>
+							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="" />
+						</div>
+					</div>
+				</div>                
             </div>
+
+			<div class="box container">
+				<header>
+					<h3>optional extras</h3>
+				</header>
+				<section>				  
+					<table class="default">
+						<tbody>
+							<tr>
+								<td>Daily supervised walks</td>
+								<td><label class="switch">
+									<input type="checkbox">
+									<span class="slider round"></span>
+								  </label></td>
+							</tr>
+							<tr>
+								<td>Swim in the damn</td>
+								<td><label class="switch">
+									<input type="checkbox">
+									<span class="slider round"></span>
+								  </label></td>
+							</tr>
+							<tr>
+								<td>Extra treats</td>
+								<td><label class="switch">
+									<input type="checkbox">
+									<span class="slider round"></span>
+								  </label></td>
+							</tr>
+							<tr>
+								<td>Feeding</td>
+								<td><label class="switch">
+									<input type="checkbox">
+									<span class="slider round"></span>
+								  </label></td>
+							</tr>
+							<tr>
+								<td>Grooming</td>
+								<td><label class="switch">
+									<input type="checkbox">
+									<span class="slider round"></span>
+								  </label></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+
+			<div class="box container">
+				<header>
+					<h3>Details</h3>
+				</header>
+				<section>
+					<div class="row">
+						<div class="col-6 col-12-mobilep">
+							<label for="dropOff">Name</label>
+							<input class="text" type="text" name="dropOff" id="dropOff" disabled value="" placeholder="John Doe" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label for="pickUp">Email</label>
+							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="johndoe@domain.tld" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label for="pickUp">Phone Number</label>
+							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="0412 345 678" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label for="pickUp">Address</label>
+							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="8 whiteman st southbank" />
+						</div>
+						<div class="col-12">
+							<label for="subject">Dogs Name</label>
+							<input class="text" type="text" name="subject" id="subject" value="" placeholder="Rex" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label for="pickUp">Breed</label>
+							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="great dane" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<label for="pickUp">Vaccination History</label>
+							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="Enter vax history" />
+						</div>
+						<div class="col-12">
+							<label for="subject">Tell us about your dog</label>
+							<textarea name="message" id="message" placeholder="Anything we need to know" rows="6"></textarea>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="box container">
+				<header>
+					<h3>Payment</h3>
+					<p>The total cost for your dog to stay here for N days is $xxx.xx</p>
+				</header>
+				<div class="row">
+					<div class="col-6 col-12-mobilep">
+						<label for="pickUp">Pay Full Amount or 10% Deposit</label>
+						<select>
+							<option value="full">$xxx.xx</option>
+							<option value="deposit">$xx.xx</option>
+						</select>
+					</div>
+					<div class="col-6 col-12-mobilep">
+						<label for="pickUp">Card Holders Name</label>
+						<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="JOHN DOE" />
+					</div>
+					<div class="col-12">
+						<label for="subject">card number</label>
+						<input class="text" type="text" name="subject" id="subject" value="" placeholder="47***" />
+					</div>
+					<div class="col-6 col-12-mobilep">
+						<label for="pickUp">expiry date</label>
+						<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="" />
+					</div>
+					<div class="col-6 col-12-mobilep">
+						<label for="pickUp">ccv</label>
+						<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="" />
+					</div>
+				</div>
+			</div>
+
+			<div class="box container">
+				<header>
+					<h3>Payment Successfull</h3>
+					<p>We look foward to meeting {dogs name} on {drop off date}</p>
+				</header>
+				<section>
+					<div class="row">
+						<div class="col-6 col-12-mobilep">
+							<button class="button">Email Receipt</button>
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<button class="button">Download Receipt</button>
+						</div>
+					</div>
+				</section>
+			</div>
 
 		</div>
 
@@ -149,163 +353,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				const calendarBody = document.getElementById('calendarBody');
-				const monthSelector = document.getElementById('monthSelector');
-				const yearSelector = document.getElementById('yearSelector');
-				const prevMonthButton = document.getElementById('prevMonth');
-				const nextMonthButton = document.getElementById('nextMonth');
-		
-				const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-		
-				// Initialize the calendar
-				let currentDate = new Date();
-				const nowDate = new Date()
-				let selectedStartDate = null;
-				let selectedEndDate = null;
-		
-				// Function to render the calendar
-				function renderCalendar() {
-					const year = currentDate.getFullYear();
-					const month = currentDate.getMonth();
-					const Year = nowDate.getFullYear();
-
-		
-					monthSelector.innerHTML = '';
-					yearSelector.innerHTML = '';
-		
-					for (let i = 0; i < 12; i++) {
-						if (i < nowDate.getMonth() && year === Year){
-							i += nowDate.getMonth();
-						}
-						const option = document.createElement('option');
-						option.value = i;
-						option.textContent = months[i];
-						monthSelector.appendChild(option);
-					}
-		
-					for (let i = Year; i <= year + 10; i++) {
-						const option = document.createElement('option');
-						option.value = i;
-						option.textContent = i;
-						yearSelector.appendChild(option);
-					}
-		
-					monthSelector.value = month;
-					yearSelector.value = year;
-		
-					const firstDay = new Date(year, month, 1);
-					const lastDay = new Date(year, month + 1, 0);
-					const prevMonthLastDay = new Date(year, month, 0);
-					const daysInMonth = lastDay.getDate();
-					const daysInPrevMonth = prevMonthLastDay.getDate();
-					const startingDay = firstDay.getDay();
-					let date = 1;
-					let prevDate = daysInPrevMonth - startingDay + 1;
-					let nextDate = 1;
-		
-					let html = '';
-
-					const unselectables = 'class="unselectable" style="color:grey"';
-		
-					for (let i = 0; i < 6; i++) {
-						html += '<tr>';
-		
-						for (let j = 0; j < 7; j++) {
-							if (i === 0 && j < startingDay) {
-								html += `<td ${unselectables}>${prevDate}</td>`;
-								prevDate++;
-							} else if (date <= daysInMonth) {
-								if (month === nowDate.getMonth() && date < nowDate.getDate()){
-									html += `<td ${unselectables}>${date}</td>`;
-									date++;
-								}
-								else if (selectedStartDate !== null && selectedStartDate.getFullYear() === year && selectedStartDate.getMonth() === month && selectedStartDate.getDate() == date){
-									html += `<td data-date="${date}" style="background-color:#18453B85; cursor:pointer; color:black">${date}</td>`;
-									date++;
-								}
-								else if (selectedEndDate !== null && selectedEndDate.getFullYear() === year && selectedEndDate.getMonth() === month && selectedEndDate.getDate() == date){
-									html += `<td data-date="${date}" style="background-color:#18453B85; cursor:pointer; color:black">${date}</td>`;
-									date++;
-								}
-								else if (selectedStartDate !== null &&
-								selectedEndDate !== null &&
-								selectedStartDate.getFullYear() <= year &&
-								selectedEndDate.getFullYear() >= year &&
-								selectedStartDate.getMonth() <= month &&
-								selectedEndDate.getMonth() >= month &&
-								selectedStartDate.getDate() <= date &&
-								selectedEndDate.getDate() >= date){
-									html += `<td data-date="${date}" style="color:black; cursor:pointer; background-color:#18453B85;">${date}</td>`;
-									date++;
-								}
-								else {
-									html += `<td data-date="${date}" style="color:black; cursor:pointer;">${date}</td>`;
-									date++;
-								}
-								
-							} else {
-								html += `<td ${unselectables}>${nextDate}</td>`;
-								nextDate++;
-							}
-						}
-		
-						html += '</tr>';
-					}
-		
-					calendarBody.innerHTML = html;
-				}
-		
-				// Handle previous and next month buttons
-				prevMonthButton.addEventListener('click', () => {
-					if (currentDate.getMonth() === nowDate.getMonth() && currentDate.getFullYear() === nowDate.getFullYear()){
-						return;
-					}
-					currentDate.setMonth(currentDate.getMonth() - 1);
-					renderCalendar();
-				});
-		
-				nextMonthButton.addEventListener('click', () => {
-					currentDate.setMonth(currentDate.getMonth() + 1);
-					renderCalendar();
-				});
-		
-				// Handle month and year selectors
-				monthSelector.addEventListener('change', () => {
-					currentDate.setMonth(parseInt(monthSelector.value));
-					renderCalendar();
-				});
-		
-				yearSelector.addEventListener('change', () => {
-					currentDate.setFullYear(parseInt(yearSelector.value));
-					renderCalendar();
-				});
-		
-				// Handle date selection
-				calendarBody.addEventListener('click', (event) => {
-					if (event.target.tagName === 'TD' && !event.target.classList.contains('unselectable')) {
-						const selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), parseInt(event.target.getAttribute('data-date')));
-						if (!selectedStartDate) {
-							selectedStartDate = selectedDate;
-						}
-						else if (selectedStartDate.getTime() === selectedDate.getTime()){
-							selectedStartDate = null;
-						}
-						else if (selectedEndDate !== null && selectedEndDate.getTime() === selectedDate.getTime()){
-							selectedEndDate = null;
-						}
-						else {
-							const startDate = selectedStartDate < selectedDate ? selectedStartDate : selectedDate;
-							const endDate = selectedStartDate < selectedDate ? selectedDate : selectedStartDate;
-							selectedEndDate = endDate
-							selectedStartDate = startDate;
-						}
-						renderCalendar();
-					}
-				});
-		
-				renderCalendar();
-			</script>
+			<script src="assets/js/dogSitting.js"></script>
 
 	</body>
 </html>
