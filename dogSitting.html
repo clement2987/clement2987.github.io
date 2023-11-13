@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
+			/* handle switches */
 			.switch {
 			  	position: relative;
 				display: inline-block;
@@ -34,10 +35,10 @@
 				.slider:before {
 				position: absolute;
 				content: "";
-				height: 19px;
+				height: 20px;
 				width: 19px;
 				left: 4px;
-				bottom: 4px;
+				bottom: 2px;
 				background-color: white;
 				-webkit-transition: .4s;
 				transition: .4s;
@@ -60,6 +61,31 @@
 
 				.slider.round:before {
 				border-radius: 50%;
+				}
+
+				/* breed input and dropdown */
+				.breedDropdown {
+					position: absolute;
+					z-index: 1; /* Ensure it appears above other elements */
+					background-color: #f9f9f9;
+					box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+					max-height: 200px; /* Set a maximum height for the dropdown */
+					overflow-y: auto; /* Enable vertical scrolling if needed */
+				}
+				.breedDropdown li {
+					padding-left: 30px;
+					padding-right: 30px;
+					cursor: pointer;
+				}
+				.breedDropdown li:hover {
+					color: white;
+					background-color: #4eb980;
+				}
+
+				/* handle enclosure selection */
+				.enclosureSelected {
+					
+					border:5px solid #4eb980;
 				}
 		</style>
 	</head>
@@ -85,35 +111,67 @@
 				
 			</header>
 
-			<div class="box alt container">
+			<div hidden>
+				<form>
+					<input id="fstay" name="stay" value="">
+
+					<input id="fstartDate" name="startDate" value="">
+					<input id="fendDate" name="endDate" value="">
+					<input id="fdays" name="days" value="">
+
+					<input id="fwalks" name="walks" value="">
+					<input id="fswims" name="swims" value="">
+					<input id="ftreats"  name="treats" value="">
+					<input id="ffood"  name="food" value="">
+					<input id="fgrooming"  name="grooming" value="">
+
+					<input id="fcustemerName"  name="custemerName" value="">
+					<input id="femail"  name="email" value="">
+					<input id="fphone"  name="phone" value="">
+					<input id="faddress"  name="address" value="">
+					<input id="fdogsname"  name="dogsName" value="">
+					<input id="fbreed"  name="breed" value="">
+					<input id="fdogSize"  name="docSize" value="">
+					<input id="fabout"  name="about" value="">
+
+					<input id="fpayment"  name="payment" value="">
+					<input id="fnameOnCard"  name="nameOnCard" value="">
+					<input id="fcardNumber"  name="cardNumber" value="">
+					<input id="fcardExpiry"  name="cardExpiry" value="">
+					<input id="fccv"  name="ccv" value="">
+				</form>
+			</div>
+
+			<div class="box alt container" id="dogsStaySelection">
                 <div class="box container">
-                  <h2>First Choose Your Dogs Stay</h2>  
+                  <h3>First Choose Your Dogs Stay</h3>  
                 </div>
                 
 				<section class="feature left">
-					<div href="#" class="image icon solid"><img src="https://images.unsplash.com/photo-1524060814534-c8540185978d?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZG9nJTIwZmFybXxlbnwwfHwwfHx8MA%3D%3D" alt="" /></div>
+					<div href="#" class="image icon solid selectableImage"><img src="https://images.unsplash.com/photo-1524060814534-c8540185978d?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZG9nJTIwZmFybXxlbnwwfHwwfHx8MA%3D%3D" alt="" /></div>
 					<div class="content">
 						<h3>ALLOW YOUR DOG THE FREEDOM TO ROAM</h3>
 						<p>We have a large property where your dog can safely run and explore, interact with other dogs and make friends</p>
 					</div>
 				</section>
 				<section class="feature right">
-					<div href="#" class="image icon solid"><img src="https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZyUyMGZhcm18ZW58MHx8MHx8fDA%3D" alt="" /></div>
+					<div href="#" class="image icon solid selectableImage"><img src="https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZyUyMGZhcm18ZW58MHx8MHx8fDA%3D" alt="" /></div>
 					<div class="content">
 						<h3>ALLOW TO ENJOY HIS STAY IN COMFORT AND PRIVACY</h3>
 						<p>Not all dogs like to interact with eachother, if your pooch would prefer to avoid the stress of unwanted attention from others we can accomedate</p>
 					</div>
 				</section>
 				<section class="feature left">
-					<div href="#" class="image icon solid"><img src="https://images.unsplash.com/photo-1546238232-20216dec9f72?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZG9nJTIwcGFja3xlbnwwfHwwfHx8MA%3D%3D" alt="" /></div>
+					<div href="#" class="image icon solid selectableImage"><img src="https://images.unsplash.com/photo-1546238232-20216dec9f72?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZG9nJTIwcGFja3xlbnwwfHwwfHx8MA%3D%3D" alt="" /></div>
 					<div class="content">
 						<h3>The PACK OPTION</h3>
 						<p>Have a whole pack? send them together and we will make sure the lot are looked after</p>
 					</div>
 				</section>
+				<button class="nextButton" id="dogsStayButton" disabled>Next</button>
 			</div>
 
-            <div class="box container">
+            <div class="box container" id="stayCal" hidden>
 				<header>
 					<h3>When Will We Be Seeing Your Pooch?</h3>
 				</header>
@@ -156,10 +214,12 @@
 							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="" />
 						</div>
 					</div>
-				</div>                
+				</div>
+				<button class="back" id="calBack">Back</button>
+				<button class="nextButton" id="calNext" disabled>Next</button>
             </div>
 
-			<div class="box container">
+			<div class="box container" id="extras" hidden>
 				<header>
 					<h3>optional extras</h3>
 				</header>
@@ -204,86 +264,95 @@
 						</tbody>
 					</table>
 				</section>
+				<button class="back" id="extraBack">Back</button>
+				<button class="nextButton" id="extraNext">Next</button>
 			</div>
 
-			<div class="box container">
+			<div class="box container" id="custemerDetails" hidden>
 				<header>
 					<h3>Details</h3>
 				</header>
 				<section>
 					<div class="row">
 						<div class="col-6 col-12-mobilep">
-							<label for="dropOff">Name</label>
-							<input class="text" type="text" name="dropOff" id="dropOff" disabled value="" placeholder="John Doe" />
+							<label for="owner">Name</label>
+							<input class="text" type="text" name="owner" id="ownerName" spellcheck="false" value="" placeholder="John Doe" />
 						</div>
 						<div class="col-6 col-12-mobilep">
-							<label for="pickUp">Email</label>
-							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="johndoe@domain.tld" />
+							<label for="email">Email</label>
+							<input class="text" type="email" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
 						</div>
 						<div class="col-6 col-12-mobilep">
-							<label for="pickUp">Phone Number</label>
-							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="0412 345 678" />
+							<label for="phoneNumber">Phone Number</label>
+							<input class="text" type="text" name="phoneNumber" id="custemersPhoneNumber" value="" placeholder="0412 345 678" />
 						</div>
 						<div class="col-6 col-12-mobilep">
-							<label for="pickUp">Address</label>
-							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="8 whiteman st southbank" />
+							<label for="Address">Address</label>
+							<input class="text" type="text" name="Address" id="Address" value="" spellcheck="false" placeholder="8 whiteman st southbank" />
 						</div>
 						<div class="col-12">
-							<label for="subject">Dogs Name</label>
-							<input class="text" type="text" name="subject" id="subject" value="" placeholder="Rex" />
+							<label for="dogsname">Dogs Name</label>
+							<input class="text" type="text" name="dogsName" id="dogsName" spellcheck="false" value="" placeholder="Rex" />
 						</div>
 						<div class="col-6 col-12-mobilep">
-							<label for="pickUp">Breed</label>
-							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="great dane" />
+							<label for="dogsBreed">Breed</label>
+							<input class="text" type="text" name="dogsBreed" id="dogsBreed" value="" spellcheck="false" placeholder="great dane" /><!--TODO make dropdown list for input-->
+							<ul class="breedDropdown">
+
+							</ul>
 						</div>
 						<div class="col-6 col-12-mobilep">
-							<label for="pickUp">Vaccination History</label>
-							<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="Enter vax history" />
+							<label for="vaccinationHistory">Vaccination History</label>
+							<input class="text" type="text" name="vaccinationHistory" id="vaccinationHistory" value="" placeholder="Enter vax history" />
 						</div>
 						<div class="col-12">
-							<label for="subject">Tell us about your dog</label>
-							<textarea name="message" id="message" placeholder="Anything we need to know" rows="6"></textarea>
+							<label for="specialInstructions">Tell us about your dog</label>
+							<textarea name="specialInstructions" id="specialInstructions" placeholder="Anything we need to know" rows="6"></textarea>
 						</div>
 					</div>
 				</section>
+				<button class="back" id="detailsBack">Back</button>
+				<button class="nextButton" id="detailsNext" disabled>Next</button>
 			</div>
 
-			<div class="box container">
+			<div class="box container" id="payment" hidden>
 				<header>
 					<h3>Payment</h3>
-					<p>The total cost for your dog to stay here for N days is $xxx.xx</p>
+					<p id="quoteToPay">The total cost for your dog to stay here for N days is $xxx.xx</p>
 				</header>
 				<div class="row">
 					<div class="col-6 col-12-mobilep">
-						<label for="pickUp">Pay Full Amount or 10% Deposit</label>
+						<label for="amountNow">Pay Full Amount or 10% Deposit</label>
 						<select>
-							<option value="full">$xxx.xx</option>
-							<option value="deposit">$xx.xx</option>
+							<option id="fullAmount" value="full">$xxx.xx</option>
+							<option id="justDeposit" value="deposit">$xx.xx</option>
 						</select>
 					</div>
 					<div class="col-6 col-12-mobilep">
-						<label for="pickUp">Card Holders Name</label>
-						<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="JOHN DOE" />
+						<label for="nameOnCard">Card Holders Name</label>
+						<input class="text" type="text" name="nameOnCard" id="nameOnCard" value="" spellcheck="false" placeholder="JOHN DOE" />
 					</div>
 					<div class="col-12">
-						<label for="subject">card number</label>
-						<input class="text" type="text" name="subject" id="subject" value="" placeholder="47***" />
+						<label for="cardNo">card number</label>
+						<input class="text" type="text" name="cardNo" id="cardNo" value="" placeholder="47***" />
 					</div>
 					<div class="col-6 col-12-mobilep">
-						<label for="pickUp">expiry date</label>
-						<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="" />
+						<label for="cardExpiry">expiry date</label>
+						<input class="text" type="text" name="cardExpiry" id="cardExpiry" value="" placeholder="mm/yy" />
 					</div>
 					<div class="col-6 col-12-mobilep">
-						<label for="pickUp">ccv</label>
-						<input class="text" type="text" name="pickUp" id="pickUp" disabled value="" placeholder="" />
+						<label for="cardCcv">ccv</label>
+						<input class="text" type="text" name="cardCcv" id="cardCcv" value="" placeholder="" />
 					</div>
 				</div>
+				<button class="back" id="paymentBack">Back</button>
+				<button class="nextButton" id="paymentNext" disabled>Submit</button>
 			</div>
 
-			<div class="box container">
+			<div class="box container" id="paymentResult" hidden>
 				<header>
 					<h3>Payment Successfull</h3>
-					<p>We look foward to meeting {dogs name} on {drop off date}</p>
+					<p id="welcome">We look foward to meeting {dogs name} on {drop off date}</p>
 				</header>
 				<section>
 					<div class="row">
