@@ -87,6 +87,37 @@
 					
 					border:5px solid #4eb980;
 				}
+
+				/* handles testimonial images */
+				.t-img {
+					border-radius: 50%;
+					max-width: auto;
+					max-height: auto;
+					overflow: hidden;
+
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				.t-img img {
+					width: 100%; /* Make the image take up 100% of the container */
+				    height: auto; /* Maintain the aspect ratio */
+				}
+
+				/* handles video tour */
+				.video-container {
+					padding: 5%;
+					
+				}
+				.video-container video {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					height: 100%;
+				}
+
 		</style>
 	</head>
 	<body class="is-preload">
@@ -168,7 +199,7 @@
 						<p>Have a whole pack? send them together and we will make sure the lot are looked after</p>
 					</div>
 				</section>
-				<button class="nextButton" id="dogsStayButton" disabled>Next</button>
+				<button class="button nextButton" id="dogsStayButton" disabled>Next</button>
 			</div>
 
             <div class="box container" id="stayCal" hidden>
@@ -366,7 +397,58 @@
 				</section>
 			</div>
 
+			<div class="box container" id="testimonials">
+				<header>
+					<h3>Testimonials</h3>
+				</header>
+				<section>
+					<div class="row">
+
+					
+					<div class="col-4 col-12-mobilep">
+						<div class="image t-img">
+							<img src="https://images.unsplash.com/photo-1536809188428-e8ecf663d0be?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZyUyMGZhcm18ZW58MHx8MHx8fDA%3D" alt="">
+						</div>
+						<h5>meet larry</h5>
+						<p>some text fdnkj hgf kj dfhgkjhfdlkug d udfhgkjdfglk dfudfngkjdf ahdsfj aohfakjfnk  uhu</p>
+					</div>
+					<div class="col-4 col-12-mobilep">
+						<div class="image t-img">
+							<img src="https://cdn.pixabay.com/photo/2016/01/05/17/51/maltese-1123016_640.jpg" alt="">
+						</div>
+						<h5>meet larry</h5>
+						<p>some text fdnkj hgf kj dfhgkjhfdlkug d udfhgkjdfglk dfudfngkjdf ahdsfj aohfakjfnk  uhu</p>
+					</div>
+					<div class="col-4 col-12-mobilep">
+						<div class="image t-img">
+							<img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nfGVufDB8fDB8fHww" alt="">
+						</div>
+						<h5>meet larry</h5>
+						<p>some text fdnkj hgf kj dfhgkjhfdlkug d udfhgkjdfglk dfudfngkjdf ahdsfj aohfakjfnk  uhu</p>
+					</div></div>
+				</section>
+			</div>
+
+			<div class="box container" id="video-tour">
+				<header>
+					<h3>see our property</h3>
+				</header>
+				<section>
+					<div  class="video-container">
+						<video muted controls="">
+							<source src="assets/video/test_footage.mp4" type="video/mp4">
+						</video>
+					</div>
+				</section>
+				<header>
+					<p>some more text</p>
+				</header>
+
+			</div>
+			<br><br><br><br>
 		</div>
+
+		
 
 		<!-- Footer -->
 			<div id="footer">
