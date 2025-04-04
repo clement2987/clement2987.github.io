@@ -214,3 +214,91 @@
 			});
 
 })(jQuery);
+
+/* lightning effect */
+
+const heroLogo = document.getElementById("hero-logo");
+
+function getRandomPoint(){
+	// Get element's position and dimensions
+    const rect = heroLogo.getBoundingClientRect();
+
+    // Generate random X and Y within the element
+    const randomX = rect.left + Math.random() * rect.width;
+    const randomY = rect.top + Math.random() * rect.height;
+
+    return { x: randomX, y: randomY };
+}
+
+function drawLightning(x1, y1, x2, y2){
+	console.log("drawing lightning")
+	const lightning = document.createElement('div');
+	lightning.classList.add('lightning');
+
+	const dx = x2-x1;
+	const dy = y2-y1;
+	const length = Math.sqrt(dx * dx + dy * dy);
+
+	const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+	// Position and style the lightning
+	lightning.style.width = `${length}px`;
+	lightning.style.left = `${x1}px`;
+	lightning.style.top = `${y1}px`;
+	lightning.style.transform = `rotate(${angle}deg)`;
+
+	document.body.appendChild(lightning);
+
+	setTimeout(() => {
+		lightning.style.transition = 'opacity 100ms ease-out';
+		lightning.style.opacity = '0';
+		setTimeout(() => lightning.remove(), 100);
+	}, 50);
+}
+
+function generatePath(x1, y1, x2, y2) {
+	const points = [{ x: x1, y: y1 }];
+	const segments = 6;
+	const dx = (x2 - x1) / segments;
+	const dy = (y2 - y1) / segments;
+
+	for (let i = 1; i < segments; i++) {
+		const px = x1 + dx * i;
+		const py = y1 + dy * i;
+
+		// Offset perpendicular to the line
+		const offset = (Math.random() - 0.5) * 20; // control jaggedness here
+		const perpAngle = Math.atan2(dy, dx) + Math.PI / 2;
+		const ox = Math.cos(perpAngle) * offset;
+		const oy = Math.sin(perpAngle) * offset;
+
+		points.push({
+			x: px + ox,
+			y: py + oy
+		});
+	}
+
+	points.push({ x: x2, y: y2 });
+	return points;
+}
+
+
+
+function trackMouse(event) {
+	const lightningTarget = getRandomPoint();
+	const path = generatePath(event.x, event.y, lightningTarget.x, lightningTarget.y);
+
+	for (let i = 0; i < path.length - 1; i++) {
+		const start = path[i];
+		const end = path[i + 1];
+		drawLightning(start.x, start.y, end.x, end.y);
+	}
+}
+
+heroLogo.addEventListener("mouseover", ()=> {
+	document.addEventListener("mousemove", trackMouse)
+})
+heroLogo.addEventListener("mouseout", ()=> {
+	document.removeEventListener("mousemove", trackMouse)
+})
+

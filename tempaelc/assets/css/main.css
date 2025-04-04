@@ -2191,10 +2191,15 @@ input, select, textarea {
 
 		.image.left, .image.right {
 			max-width: 40%;
+			max-height: 250px;
+			overflow: hidden;
+			background-position: center center;
 		}
 
 			.image.left img, .image.right img {
 				width: 100%;
+				object-fit: cover;
+				object-position: center;
 			}
 
 		.image.left {
@@ -2905,7 +2910,7 @@ input, select, textarea {
 		}
 
 		#header #logo {
-			background: #47a9b8;
+			background: #000000;
 			margin: 0 2rem;
 			padding: 2rem;
 			position: relative;
@@ -2915,7 +2920,7 @@ input, select, textarea {
 		}
 
 			#header #logo:before {
-				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' preserveAspectRatio='none' viewBox='0 0 100 100'%3E%3Cpolygon points='0,0 100,0 50,100' fill='%2347a9b8' /%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' preserveAspectRatio='none' viewBox='0 0 100 100'%3E%3Cpolygon points='0,0 100,0 50,100' fill='%23000000' /%3E%3C/svg%3E");
 				background-repeat: no-repeat;
 				background-size: 100% 100%;
 				bottom: -2rem;
@@ -2936,8 +2941,12 @@ input, select, textarea {
 				font-size: 2.25rem;
 				letter-spacing: 0.15rem;
 				line-height: 2.5rem;
-				padding: 1rem;
+				padding: 0rem;
 				text-decoration: none;
+			}
+
+			#header #logo a #hero-logo {
+				width: 8vw;
 			}
 
 		#header a[href="#navPanel"] {
@@ -2953,6 +2962,7 @@ input, select, textarea {
 			z-index: 911;
 		}
 
+		
 			#header a[href="#navPanel"]:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
@@ -3112,6 +3122,10 @@ input, select, textarea {
 				display: none;
 			}
 
+			#header #logo a #hero-logo {
+				width: 10vw;
+			}
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3125,7 +3139,11 @@ input, select, textarea {
 					font-size: 2rem;
 					letter-spacing: 0.15rem;
 					line-height: 2rem;
-					padding: 1rem;
+					padding: 0rem;
+				}
+
+				#header #logo a #hero-logo {
+					width: 15vw;
 				}
 
 		}
@@ -3224,7 +3242,7 @@ input, select, textarea {
 			right: 0;
 			text-align: right;
 			top: 0;
-			vertical-align: middle;
+			/* vertical-align: middle; */
 			width: 7rem;
 		}
 
@@ -3553,3 +3571,76 @@ input, select, textarea {
 				}
 
 			}
+
+
+.header-image {
+	padding: 0%;
+}
+
+/* check list */
+ul.check {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.check li {
+	text-decoration: none;
+	padding: 0 0 2em 3em;
+	position: relative;
+}
+
+ul.check li:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	text-transform: none !important;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+}
+
+ul.check li:before {
+	color: #4bb2b6;
+	content: '\f00c';
+	display: block;
+	font-size: 1.75em;
+	left: 0;
+	position: absolute;
+}
+
+ul.check li:last-child {
+	padding-bottom: 0;
+}
+
+/* page devider */
+.section {
+	margin: 2vh;
+	overflow: hidden;
+}
+	
+
+/* Lightning */
+
+
+@keyframes flicker {
+	0% { opacity: 1; }
+	50% { opacity: 0.7; }
+	100% { opacity: 1; }
+}
+
+.lightning {
+	position: absolute;
+	background-color: rgb(125, 249, 255);
+	transform-origin: top left;
+	height: 2px; /* Line thickness */
+	box-shadow: 0 0 4px rgba(125, 249, 255, 0.8),
+	            0 0 10px rgba(125, 249, 255, 0.5),
+	            0 0 20px rgba(125, 249, 255, 0.3);
+	animation: flicker 0.1s ease-in-out;
+	border-radius: 2px;
+	pointer-events: none;
+	z-index: 100000;
+}
