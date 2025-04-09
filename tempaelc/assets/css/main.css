@@ -3620,7 +3620,15 @@ ul.check li:last-child {
 	margin: 2vh;
 	overflow: hidden;
 }
-	
+
+/* Accreditations */
+
+
+
+.accreditations .icons li img {
+	height: 120px; /* or whatever height looks best */
+	object-fit: contain;
+}
 
 /* Lightning */
 

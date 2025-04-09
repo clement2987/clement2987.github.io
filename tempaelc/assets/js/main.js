@@ -231,7 +231,6 @@ function getRandomPoint(){
 }
 
 function drawLightning(x1, y1, x2, y2){
-	console.log("drawing lightning")
 	const lightning = document.createElement('div');
 	lightning.classList.add('lightning');
 
