@@ -24,7 +24,7 @@ let info = {
     },
     venue: "",
     venueDetails: {
-        Cardinia: {
+        cardinia: {
             rego: "18:30",
             start: "19:00",
             avgPlayers: "42",
@@ -32,7 +32,7 @@ let info = {
             vInstructions: "give $10 per player to the bar after rego closes. game goes slow untill the first break, after which the players drop like flies. be ready to break tables",
             notes: "use the big tv behind rego dest for the clock, you can try to access it wirelessly but I find it is easier to use hdmi cord. remote at the bar, if you get a hdmi extender you can use the cord with the number 2 written on it, then use hdmi 2"
         },
-        Settlement: {
+        settlement: {
             rego: "18:00",
             start: "19:00",
             avgPlayers: "40",
@@ -40,7 +40,7 @@ let info = {
             vInstructions: "close the tables upstairs first, to let the venue start packing up, close tables towards the rego desk then run the final table on the hardwood un front of the rail of the upstairs area. the venue staff like to reset the carpeted area first. hdmi cable already attached to tv behind rego, ask the bar for the remote",
             notes: "3rd wednsday of every month is a $60 freezeout, on these days the start stack is 125k, no lifeline for these events. again return recipts to the bar to get the prize money"
         },
-        Leighoak: {
+        leighoak: {
             rego: "19:00",
             start: "19:30",
             avgPlayers: "70",
@@ -48,7 +48,7 @@ let info = {
             vInstructions: "each player receives a stamp card, $10 over the bar gives them 4 stamps",
             notes: "I tend to be fairly trusting with the stamp cards, if a player busts early I give them the chips but remind them to show the bar some love. lots of players come late for this one, I often do not have time to buy up the blacks because I am constantly registering new players. chips and cards at the venue"
         },
-        Highways: {
+        highways: {
             rego: "11:00",
             start: "11:30",
             avgPlayers: "150",
@@ -114,6 +114,12 @@ function loadVenue(venueName){
     roster.style.display = "none";
     venue.style.display = "block";
     document.getElementById("displayVenuename").innerHTML = venueName;
+
+    document.getElementById("dtime").innerHTML = `Rego: ${info.venueDetails.venueName.rego}, Start: ${info.venueDetails.venueName.start}`
+    document.getElementById("davg").innerHTML = `average number of players: ${info.venueDetails.venueName.avgPlayers}`
+    document.getElementById("gdet").innerHTML = `Game instructions: ${info.venueDetails.venueName.gInstructions}`
+    document.getElementById("gins").innerHTML = `venue instructions: ${info.venueDetails.venueName.vInstructions}`
+    document.getElementById("vnotes").innerHTML = `additional notes: ${info.venueDetails.venueName.notes}`
 }
 
 function leaveVenue(){
@@ -283,4 +289,5 @@ function payStructure(){
     displayStructure(payouts)
 
 }
+
 
