@@ -6,13 +6,13 @@ const pickup = document.getElementById("pickup");
 
 let info = {
     user: "",
-    monvenue: "Narre Warren Hotel",
-    tuevenue: "",
-    wedvenue: "The factory",
+    monvenue: "",
+    tuevenue: "Cardinia",
+    wedvenue: "Settlement",
     thurvenue: "",
     frivenue: "",
-    satvenue: "",
-    sunvenue: "",
+    satvenue: "Leighoak",
+    sunvenue: "Highways",
     availableShifts: {
         mon: ["The Coffee Club", "Sunset Lounge", "Echo Bar"],
         tue: ["Neon Alley"],
@@ -23,6 +23,12 @@ let info = {
         sun: []
     },
     venue: "",
+    venueDetails = {
+        Cardinia: {},
+        Settlement: {},
+        Leighoak: {},
+        Highways: {}
+    }
 };
 
 function createButton(day){
@@ -157,6 +163,8 @@ function loginUser(){
     loadRoster();
 }
 
+loadRoster();
+
 function calcPrizepool(){
     // inputs
     const buyIn = document.getElementById("buyIn");
@@ -245,4 +253,5 @@ function payStructure(){
     const payouts = calculatePayouts(numPayed.value, factor.value, prizepool);
     console.log(payouts)
     displayStructure(payouts)
+
 }
