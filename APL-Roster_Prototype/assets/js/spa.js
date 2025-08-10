@@ -23,11 +23,39 @@ let info = {
         sun: []
     },
     venue: "",
-    venueDetails = {
-        Cardinia: {},
-        Settlement: {},
-        Leighoak: {},
-        Highways: {}
+    venueDetails: {
+        Cardinia: {
+            rego: "18:30",
+            start: "19:00",
+            avgPlayers: "42",
+            gInstructions: "10K early bird, 100k start stack, straight freeze out, $10 LPS",
+            vInstructions: "give $10 per player to the bar after rego closes. game goes slow untill the first break, after which the players drop like flies. be ready to break tables",
+            notes: "use the big tv behind rego dest for the clock, you can try to access it wirelessly but I find it is easier to use hdmi cord. remote at the bar, if you get a hdmi extender you can use the cord with the number 2 written on it, then use hdmi 2"
+        },
+        Settlement: {
+            rego: "18:00",
+            start: "19:00",
+            avgPlayers: "40",
+            gInstructions: "10K early bird, 75k start. players pay $25 at the bar, keep the recipts and return them to the bar to receive the prize money. $10 LPS, $20 lifeline worth an extra 75k in chips to be used if the player busts or reaches the first break. I use stamp cards to track the lifelines",
+            vInstructions: "close the tables upstairs first, to let the venue start packing up, close tables towards the rego desk then run the final table on the hardwood un front of the rail of the upstairs area. the venue staff like to reset the carpeted area first. hdmi cable already attached to tv behind rego, ask the bar for the remote",
+            notes: "3rd wednsday of every month is a $60 freezeout, on these days the start stack is 125k, no lifeline for these events. again return recipts to the bar to get the prize money"
+        },
+        Leighoak: {
+            rego: "19:00",
+            start: "19:30",
+            avgPlayers: "70",
+            gInstructions: "$30 to enter, $20 LPS. 50k start and 50k for a stamp card",
+            vInstructions: "each player receives a stamp card, $10 over the bar gives them 4 stamps",
+            notes: "I tend to be fairly trusting with the stamp cards, if a player busts early I give them the chips but remind them to show the bar some love. lots of players come late for this one, I often do not have time to buy up the blacks because I am constantly registering new players. chips and cards at the venue"
+        },
+        Highways: {
+            rego: "11:00",
+            start: "11:30",
+            avgPlayers: "150",
+            gInstructions: "one TD handles rego and the other runs the game. when running the game I keep the tables 6 handed for the first 7 tables, sending new players straight to a new table. once I have 7 tables at 6 handed I will start filling them to 8 and open new tables as needed, this is a rough rule and use best judgment.",
+            vInstructions: "when running the tournament seat players manually, keep track of gaps and keep tables balanced. when rego closes the blinds will go to 3k/6k. instruct the players to deal one hand of 3/6, at the completion of that hand rego will be closed and the players will be unable to re-enter",
+            notes: "keep the blacks in play untill after the first break, we have a level of 700/1,400 and they will be needed. keep yellows in play until 7,000/14,000. keep blues in play untill after rego closes, it is far too busy to stress about the race off before. some players have faverite seats, they will tell you who they are."
+        }
     }
 };
 
@@ -255,3 +283,4 @@ function payStructure(){
     displayStructure(payouts)
 
 }
+
