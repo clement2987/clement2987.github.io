@@ -24,7 +24,7 @@ let info = {
     },
     venue: "",
     venueDetails: {
-        cardinia: {
+        Cardinia: {
             rego: "18:30",
             start: "19:00",
             avgPlayers: "42",
@@ -36,7 +36,7 @@ let info = {
             lps: "10",
             rebuy: "0"
         },
-        settlement: {
+        Settlement: {
             rego: "18:00",
             start: "19:00",
             avgPlayers: "40",
@@ -48,7 +48,7 @@ let info = {
             lps: "10",
             rebuy: "20"
         },
-        leighoak: {
+        Leighoak: {
             rego: "19:00",
             start: "19:30",
             avgPlayers: "70",
@@ -60,7 +60,7 @@ let info = {
             lps: "20",
             rebuy: "0"
         },
-        highways: {
+        Highways: {
             rego: "11:00",
             start: "11:30",
             avgPlayers: "150",
@@ -310,6 +310,7 @@ function payStructure(){
     displayStructure(payouts)
 
 }
+
 
 
 
