@@ -42,7 +42,7 @@ let info = {
             avgPlayers: "40",
             gInstructions: "10K early bird, 75k start. players pay $25 at the bar, keep the recipts and return them to the bar to receive the prize money. $10 LPS, $20 lifeline worth an extra 75k in chips to be used if the player busts or reaches the first break. I use stamp cards to track the lifelines",
             vInstructions: "close the tables upstairs first, to let the venue start packing up, close tables towards the rego desk then run the final table on the hardwood un front of the rail of the upstairs area. the venue staff like to reset the carpeted area first. hdmi cable already attached to tv behind rego, ask the bar for the remote",
-            notes: "3rd wednsday of every month is a $60 freezeout, on these days the start stack is 125k, no lifeline for these events. again return recipts to the bar to get the prize money",
+            notes: "3rd wednsday of every month is a $60 freezeout, on these days the start stack is 125k, no lifeline for these events. again return recipts to the bar to get the prize money. Kit at the venue, in the managers office",
             buyin: "25",
             apl: "10",
             lps: "10",
@@ -310,6 +310,7 @@ function payStructure(){
     displayStructure(payouts)
 
 }
+
 
 
 
