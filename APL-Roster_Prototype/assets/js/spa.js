@@ -131,16 +131,16 @@ function loadVenue(venueName){
     venue.style.display = "block";
     document.getElementById("displayVenuename").innerHTML = venueName;
 
-    document.getElementById("dtime").innerHTML = `Rego: ${info.venueDetails.venueName.rego}, Start: ${info.venueDetails.venueName.start}`
-    document.getElementById("davg").innerHTML = `average number of players: ${info.venueDetails.venueName.avgPlayers}`
-    document.getElementById("gdet").innerHTML = `Game instructions: ${info.venueDetails.venueName.gInstructions}`
-    document.getElementById("gins").innerHTML = `venue instructions: ${info.venueDetails.venueName.vInstructions}`
-    document.getElementById("vnotes").innerHTML = `additional notes: ${info.venueDetails.venueName.notes}`
+    document.getElementById("dtime").innerHTML = `Rego: ${info.venueDetails[venueName].rego}, Start: ${info.venueDetails[venueName].start}`
+    document.getElementById("davg").innerHTML = `average number of players: ${info.venueDetails[venueName].avgPlayers}`
+    document.getElementById("gdet").innerHTML = `Game instructions: ${info.venueDetails[venueName].gInstructions}`
+    document.getElementById("gins").innerHTML = `venue instructions: ${info.venueDetails[venueName].vInstructions}`
+    document.getElementById("vnotes").innerHTML = `additional notes: ${info.venueDetails[venueName].notes}`
 
-    document.getElementById("buyIn").value = info.venueDetails.venueName.buyin;
-    document.getElementById("apl").value = info.venueDetails.venueName.apl;
-    document.getElementById("lps").value = info.venueDetails.venueName.lps;
-    document.getElementById("rebuy").value = info.venueDetails.venueName.rebuy;
+    document.getElementById("buyIn").value = info.venueDetails[venueName].buyin;
+    document.getElementById("apl").value = info.venueDetails[venueName].apl;
+    document.getElementById("lps").value = info.venueDetails[venueName].lps;
+    document.getElementById("rebuy").value = info.venueDetails[venueName].rebuy;
 }
 
 function leaveVenue(){
@@ -310,6 +310,7 @@ function payStructure(){
     displayStructure(payouts)
 
 }
+
 
 
 
