@@ -1,0 +1,12 @@
+.displayLists {
+    display: flex;
+    gap: 2rem; /* space between the lists */
+    align-items: flex-start;
+  }
+
+  .displayLists ol,
+  .displayLists ul {
+    margin: 0;
+    padding: 0 1rem;
+    list-style-position: inside;
+  }

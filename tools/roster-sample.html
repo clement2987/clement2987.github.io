@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>APL Roster</title>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <div id="login">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    
+                </nav>
+            </section>
+            <section class="wrapper style1">
+                <div class="inner">
+                    <header class="major special">
+                        <h1>login</h1>
+                        <p>This is just a sample so log in with any name you like! <br> ignore the password, it doesn't do anything</p>
+                    </header>
+                    <input type="text" name="demo-name" id="user-name" value="" placeholder="Username..." />
+                    <input type="password" value="" placeholder="password..." />
+                    <button class="button primary" onclick="loginUser()">Login</button>
+                </div>
+                
+            </section>
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+        <div id="roster">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    
+                </nav>
+            </section>
+            <section class="wrapper style1">
+                <div class="inner">
+                    <header class="major special">
+                        <h1>welcome <span id="displayUsername"></span></h1>
+                        <p>the venues you are rostered to work are as follows:</p>
+                    </header>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Venue</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mon</td>
+                                    <td id="monVenue"></td>
+                                    <td id="monAction"></td>
+                                </tr>
+                                <tr>
+                                    <td>Tue</td>
+                                    <td id="tueVenue"></td>
+                                    <td id="tueAction"></td>
+                                </tr>
+                                <tr>
+                                    <td>Wed</td>
+                                    <td id="wedVenue"></td>
+                                    <td id="wedAction"></td>
+                                </tr>
+                                <tr>
+                                    <td>Thur</td>
+                                    <td id="thurVenue"></td>
+                                    <td id="thurAction"></td>
+                                </tr>
+                                <tr>
+                                    <td>Fri</td>
+                                    <td id="friVenue"></td>
+                                    <td id="friAction"></td>
+                                </tr>
+                                <tr>
+                                    <td>Sat</td>
+                                    <td id="satVenue"></td>
+                                    <td id="satAction"></td>
+                                </tr>
+                                <tr>
+                                    <td>Sun</td>
+                                    <td id="sunVenue"></td>
+                                    <td id="sunAction"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+        <div id="venue">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="leaveVenue(); return false;">roster</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="wrapper style1">
+                <div class="inner">
+                    <header class="major special">
+                        <h1><span id="displayVenuename"></span></h1>
+                        <p>123 somewhere road, example 3999</p>
+                    </header>
+                    <div class="box">
+                        <p>Rego: 18:00, start: 19:00</p>
+                        <p>average number of players: 42</p>
+                        <p>Game instructions: 75k in chips with another 175k lifeline. 100k earlybird. earlybird ends at exactly 18:05</p>
+                        <p>venue instructions: the venue sets up the poker tables upstairs, you will be required to return the tables to the storage room when you pack up. <br> the players buy in with you. the venue will collect all money that is to be returned to APL <br>The venue provides a screen to display the clock but you must bring your own HTMI cable. <br>The venue has its own chips and cards</p>
+                        <p>Additional notes: the venue's cards need to be replaced, you will been to bring your own for now</p>
+                    </div>
+                    <div class="box">
+                        <label>Buy In: $</label><input value="25" type="number" id="buyIn">
+                        <label>APL's Cut: $</label><input value="5" type="number" id="apl">
+                        <label>LPS: $</label><input value="10" type="number" id="lps">
+                        <label>lifeline: $</label><input value="10" type="number" id="rebuy">
+
+                        <label>total players: </label><input value="0" type="number" id="totalPlayers">
+                        <label>total LPS: </label><input value="0" type="number" id="totalLPS">
+                        <label>total Lifelines: </label><input value="0" type="number" id="totalLifelines">
+
+                        <ul>
+                            <li>
+                                total cash on hand: $<span id="totalCash"></span>
+                            </li>
+                            <li>
+                                Cash set aside for APL: $<span id="totalCashAPL"></span>
+                            </li>
+                            <li>
+                                total lifeline: $<span id="totalCashLifeline"></span>
+                            </li>
+                            <li>
+                                total prizepool: $<span id="totalCashPrizepool"></span>
+                            </li>
+                            <li>
+                                total cash for LPS: $<span id="totalCashLPS"></span>
+                            </li>
+                        </ul>
+                        <button class="button primary" onclick="calcPrizepool()">Calculate</button>
+                    </div>
+                    <div class="box">
+                        <label>number of places to pay</label><input value="1" type="number" id="numPayed">
+                        <label>top heavy, 1 is flat 10 is more top heavy</label><input value="1" type="number" id="topHeavy"><br>
+                        <button class="button primary" onclick="payStructure()">calculate pay structure</button>
+                        <ol id="paystructureOutput"></ol>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+        <div id="team">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    
+                </nav>
+            </section>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+        <div id="pickup">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    
+                </nav>
+            </section>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+    </div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/spa.js"></script> 
+</body>
+
+</html>

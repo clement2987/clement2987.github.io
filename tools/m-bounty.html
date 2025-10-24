@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/additional.css" />
+    <title>APL Roster</title>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <div id="login">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Mystory Bounty</strong></div>
+
+                <!-- Nav -->
+            </section>
+
+            <section class="wrapper style1">
+                <div class="inner">
+                    <div class="box">
+                        
+                    </div>
+                    <div class="box">
+                        <label>Buy In: $</label><input value="200" type="number" id="buyIn">
+                        <label>Bounty: $</label><input value="200" type="number" id="bounty">
+                        <label>APL's Cut: $</label><input value="15" type="number" id="apl">
+                        <label>LPS: $</label><input value="50" type="number" id="lps">
+                        <label>re-entry (buyin+bounty): $</label><input value="400" type="number" id="rebuy">
+
+                        <hr>
+
+                        <label>total players: </label><input value="0" type="number" id="totalPlayers">
+                        <label>total LPS: </label><input value="0" type="number" id="totalLPS">
+                        <label>total re-entrie: </label><input value="0" type="number" id="totalLifelines">
+
+                        <ul>
+                            <li>
+                                total cash on hand: $<span id="totalCash"></span>
+                            </li>
+                            <li>
+                                Cash set aside for APL: $<span id="totalCashAPL"></span>
+                            </li>
+                            <li>
+                                total lifeline: $<span id="totalCashLifeline"></span>
+                            </li>
+                            <li>
+                                total prizepool: $<span id="totalCashPrizepool"></span>
+                            </li>
+                            <li>
+                                total cash for LPS: $<span id="totalCashLPS"></span>
+                            </li>
+                            <li>
+                                total cash for Bounty: $<span id="totalCashBounty"></span>
+                            </li>
+                        </ul>
+                        <button class="button primary" onclick="calcPrizepool()">Calculate</button>
+                    </div>
+                    <div class="box">
+                        <label>number of places to pay</label><input value="1" type="number" id="numPayed">
+                        <label>top heavy, 1 is flat 10 is more top heavy</label><input value="3" type="number" id="topHeavy"><br>
+                        <label>portion of the bounty for largest prize. 1/</label><input value="3" type="number" id="topBounty"><br>
+                        <button class="button primary" onclick="payStructure()">calculate pay structure</button>
+                        <button class="button primary" onclick="saveAndOpen()">send it</button>
+                        <div class="displayLists">
+                            <ol id="paystructureOutput"></ol>
+                            <ol id="bountyOutput"></ol>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+        <div id="team">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    
+                </nav>
+            </section>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+        <div id="pickup">
+            <section id="header">
+                <!-- Logo -->
+                <div href="#" class="logo"><strong>APL Rosters</strong></div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    
+                </nav>
+            </section>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#">apl home page</a></li>
+                    <li><a href="#">ted online</a></li>
+                    <li><a href="#">ralavent fb pages for posting results</a></li>
+                </ul>
+                <p class="copyright">
+                    <span>some content</span>
+                </p>
+            </section>
+        </div>
+    </div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/bounty.js"></script> 
+</body>
+
+</html>
