@@ -29,6 +29,9 @@ data.items.forEach(item => {
 
     middle.classList.add("suit");
     middle.innerHTML = `${item.value}`;
+  if (item.ticket){
+        middle.innerHTML += "<br>Ticket"
+    }
 
     bottom.classList.add("corner");
     bottom.classList.add("bottom");
@@ -71,4 +74,5 @@ document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
         card.classList.remove('flipped');
     });
+
 });
