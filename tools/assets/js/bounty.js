@@ -130,20 +130,40 @@ function displayStructure(payouts){
     })
 }
 
-function processBounties(bounties){
-    const outputList = document.getElementById("bountyOutput")
+function processBounties(bounties) {
+    const outputList = document.getElementById("bountyOutput");
     outputList.innerHTML = "";
-    globalData.items = []
+    globalData.items = [];
+
     bounties.forEach((value) => {
         const item = document.createElement("li");
-        item.innerHTML = value;
+        const text = document.createElement("span");
+        const button = document.createElement("button");
+
+        text.textContent = value;
+        button.textContent = "Add Ticket";
+
+        item.appendChild(text);
+        item.appendChild(button);
         outputList.appendChild(item);
-        globalData.items.push({
+
+        const bountyObj = {
             paid: false,
             value: value,
-            listItem: item
-        })
-    })
+            listItem: item,
+            ticket: false,
+        };
+
+        // Event listener for the button
+        button.addEventListener("click", () => {
+            bountyObj.value -= 1500;
+            bountyObj.ticket = true;
+            text.textContent = bountyObj.value; // update the display
+            button.disabled = true; // optional: prevent double clicks
+        });
+
+        globalData.items.push(bountyObj);
+    });
 }
 
 function payStructure(){
@@ -163,4 +183,5 @@ function saveAndOpen() {
 
       // Open the next page in a new tab
       window.open('user-selection.html', '_blank');
+
     }
